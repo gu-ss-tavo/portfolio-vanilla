@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- meta config -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- meta data -->
     <title>portfolio vanilla</title>
+    <meta name="author" content="gusstavo.jarabs@gmail.com">
+    <meta name="description" content="practica para Academlo">
+
+    <!-- normalize -->
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- styles by guss-->
+    <link rel="stylesheet" href="./src/styles/styles.css">
 </head>
 <body>
-    <h1>Portfolio</h1>
+    <header class="header-main">
+        <!-- navigation -->
+        <nav class="navmenu-container">
+            <ul class="navmenu-list">
+                <li class="navmenu-item-list"><a href="#">Home</a></li>
+                <li class="navmenu-item-list"><a href="#">About</a></li>
+                <li class="navmenu-item-list"><a href="#">Services</a></li>
+                <li class="navmenu-item-list"><a href="#">Portfolio</a></li>
+                <li class="navmenu-item-list"><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="btn-navmenu"><</button>
+    </header>
+    <section class="section-container">
+        <article id="Home" class="home-container">Home</article>
+        <article id="About" class="about-container">About</article>
+        <article id="Services" class="services-container">Services</article>
+        <article id="Portfolio" class="portfolio-container">Portfolio</article>
+        <article id="Contact" class="contact-container">Contact</article>
+    </section>
+
+    <script src="./src/scripts/script.js"></script>
 </body>
 </html>

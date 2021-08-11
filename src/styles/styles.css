@@ -1,0 +1,98 @@
+/* ! helps 
+ * colors
+ ? - light-primary = #fafaff
+ ? - dark-primary = #181818
+
+ ? - light-10 = #ffffff10
+ ? - shadow-10 = #00000010
+*/
+
+/* *reset */
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: 'Open Sans', sans-serif;
+    color: #181818;
+}
+html {
+    font-size: 0.625rem;
+}
+
+header {
+    position: fixed;
+
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+/* *helpers */
+d-none {
+    display: none;
+}
+
+/* *styles */
+/* navmenu */
+.navmenu-container {
+    min-width: 50%;
+    background: #ffffff10;
+
+    position: absolute;
+    right: -50%;
+
+    font-size: 2rem;
+
+    transition: right .3s ease-in-out;
+}
+.navmenu-container.active {
+    right: 0;
+}
+.navmenu-list {
+    padding: 1rem;
+}
+.navmenu-item-list {
+    padding: .5rem;
+}
+.navmenu-item-list > a {
+    display: inline-block;
+    width: 100%;
+    
+    padding: 1rem;
+    
+    color: #ffffff00;
+
+    transition: color .5s ease-out;
+}
+.navmenu-container.active .navmenu-item-list > a {
+    color: #181818;
+}
+.btn-navmenu {
+    padding: 1rem 1.5rem;
+
+    position: absolute;
+    bottom: 6rem;
+    right: 2rem;
+
+    font-size: 3rem;
+    font-weight: 700;
+
+    transition: transform .3s;
+}
+.btn-navmenu.active {
+    transform: rotate(-180deg);
+}
