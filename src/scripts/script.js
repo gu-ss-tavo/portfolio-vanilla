@@ -24,3 +24,9 @@ const close_menu = () => {
     navmenu.classList.remove('active');
     btn_navmenu.classList.remove('active');
 };
+
+window.addEventListener('resize', () => {
+    if(innerWidth >= 768) {
+        close_menu();
+    }
+})
