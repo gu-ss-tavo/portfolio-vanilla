@@ -26,7 +26,7 @@ const close_menu = () => {
 };
 
 window.addEventListener('resize', () => {
-    if(innerWidth >= 768) {
+    if(innerWidth >= 576) {
         close_menu();
     }
 })

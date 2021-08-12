@@ -57,13 +57,13 @@ button {
 /* *styles */
 /* navmenu */
 .navmenu-container {
-    min-width: 60%;
+    min-width: 25rem;
     min-height: 100%;
     
-    background: #00000010;
+    background: #ccccccf0;
 
     position: absolute;
-    right: -60%;
+    right: -25rem;
 
     font-size: 2rem;
 
@@ -101,19 +101,32 @@ button {
     padding: 1rem 1.5rem;
     
     position: absolute;
-    bottom: 6rem;
-    right: 2rem;
+    bottom: 9rem;
+    right: 1rem;
     
     font-size: 4rem;
     font-weight: 700;
     
     transition: transform .3s;
 }
+.btn-navmenu::before {
+    display: block;
+    content: "<";
+
+    min-width: 100%;
+    min-height: 100%;
+
+    position: absolute;
+    left: 0;
+    
+    color: #7aaa2b;
+    clip-path: polygon(41% 0, 100% 0, 100% 100%, 86% 100%);
+}
 .btn-navmenu.active {
     transform: rotate(-180deg);
 }
-/* [media] nav md */
-@media screen and (min-width: 768px) {
+/* [media] nav sm */
+@media screen and (min-width: 576px) {
     .ic {
         display: none;
     }
@@ -130,7 +143,7 @@ button {
         font-size: 1.4rem;
         font-weight: 700;
         
-        transform: translateX(-60%);
+        transform: translateX(-25rem);
         transition: none;
     }
     .navmenu-list {
@@ -150,5 +163,64 @@ button {
     }
     .btn-navmenu {
         display: none;
+    }
+}
+
+/* home container */
+.home-container {
+    min-height: 100vh;
+    
+    overflow-x: hidden;
+    position: relative;
+}
+.brand-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+.brand-block {
+    flex-basis: 0;
+    position: relative;
+}
+.brand-block h2 {
+    position: absolute;
+    top: 0;
+
+    font-size: 12rem;
+    letter-spacing: 1rem;
+}
+
+.brand-block h2:nth-child(1) {
+    position: relative;
+}
+.brand-block h2:nth-child(2) {
+    color: #618d1b;
+    clip-path: polygon(0% 48%, 15% 38%, 34% 35%, 49% 39%, 59% 45%, 74% 49%, 87% 50%, 100% 46%, 100% 100%, 0% 100%);
+
+    animation: 2.2s ease-in-out infinite alternate brand-anim-h2-c1;
+}
+.brand-block h2:nth-child(3) {
+    color: #7aaa2b;
+    clip-path: polygon(0 58%, 11% 64%, 28% 67%, 44% 65%, 59% 55%, 73% 50%, 89% 52%, 100% 58%, 100% 100%, 0% 100%);
+    
+    animation: 2.2s ease-in-out infinite alternate brand-anim-h2-c2;
+}
+/* [media] home sm */
+@media screen and (min-width: 768px) {
+    .brand-container {
+        flex-direction: row;
+    }
+}
+@keyframes brand-anim-h2-c1 {
+    to {
+        clip-path: polygon(0 48%, 14% 55%, 31% 55%, 45% 52%, 57% 45%, 72% 40%, 88% 41%, 100% 48%, 100% 100%, 0% 100%);
+    }
+}
+@keyframes brand-anim-h2-c2 {
+    to {
+        clip-path: polygon(0 58%, 14% 52%, 30% 51%, 46% 55%, 60% 61%, 77% 63%, 90% 56%, 100% 48%, 100% 100%, 0% 100%);
     }
 }
