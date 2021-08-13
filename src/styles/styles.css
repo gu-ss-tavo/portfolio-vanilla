@@ -1,14 +1,3 @@
-/* ! helps 
- * colors
- ? - light-primary = #fafaff
- ? - dark-primary = #181818
-
- ? - dark-secondary = #111
-
- ? - light-10 = #ffffff10
- ? - shadow-10 = #00000010
-*/
-
 /* *reset */
 * {
     margin: 0;
@@ -62,6 +51,7 @@ a, button {
 .col-10 {width: 83.333%;}
 .col-11 {width: 91.666%;}
 .col-12 {width: 100%;}
+/* [media] grid md */
 @media screen and (min-width: 768px) {
     .col-md-1 {width: 8.333%;}
     .col-md-2 {width: 16.666%;}
@@ -270,7 +260,7 @@ a, button {
     
     animation: 2.2s ease-in-out infinite alternate brand-anim-h2-c2;
 }
-/* [media] home sm */
+/* [media] home md */
 @media screen and (min-width: 768px) {
     .brand-container {
         flex-direction: row;
@@ -291,10 +281,10 @@ a, button {
 .about-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 
     min-height: 100vh;
+    padding: 5rem 0 5rem;
 
     overflow-x: hidden;
     position: relative;
@@ -344,12 +334,39 @@ a, button {
     text-align: center;
     letter-spacing: .1rem;
 }
+/* [media] about sm */
+@media screen and (min-width: 576px){
+}
+/* [media] about md */
 @media screen and (min-width: 768px){
     .about-container {
         flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
         padding: 6rem 0 0;
     }
     .about-description {
         line-height: 2rem;
+    }
+}
+/* [media] about lg */
+@media screen and (min-width: 992px) {
+    .about-container {
+        align-items: center;
+    }
+    .about-container > div {
+        padding-bottom: 5rem;
+    }
+    .about-name {
+        font-size: 3.5rem;
+    }
+    .about-subtitle {
+        font-size: 2.7rem;
+    }
+    .about-description {
+        font-size: 2rem;
+        line-height: 3rem;
+        letter-spacing: 0;
+        word-spacing: .2rem;
     }
 }
