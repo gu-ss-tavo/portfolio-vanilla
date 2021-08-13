@@ -45,8 +45,8 @@ a, button {
 .col-4 {width: 33.333%;}
 .col-5 {width: 41.666%;}
 .col-6 {width: 50%;}
-.col-7 {width: 58.333;}
-.col-8 {width: 66.666;}
+.col-7 {width: 58.333%;}
+.col-8 {width: 66.666%;}
 .col-9 {width: 75%;}
 .col-10 {width: 83.333%;}
 .col-11 {width: 91.666%;}
@@ -59,8 +59,8 @@ a, button {
     .col-sm-4 {width: 33.333%;}
     .col-sm-5 {width: 41.666%;}
     .col-sm-6 {width: 50%;}
-    .col-sm-7 {width: 58.333;}
-    .col-sm-8 {width: 66.666;}
+    .col-sm-7 {width: 58.333%;}
+    .col-sm-8 {width: 66.666%;}
     .col-sm-9 {width: 75%;}
     .col-sm-10 {width: 83.333%;}
     .col-sm-11 {width: 91.666%;}
@@ -74,8 +74,8 @@ a, button {
     .col-md-4 {width: 33.333%;}
     .col-md-5 {width: 41.666%;}
     .col-md-6 {width: 50%;}
-    .col-md-7 {width: 58.333;}
-    .col-md-8 {width: 66.666;}
+    .col-md-7 {width: 58.333%;}
+    .col-md-8 {width: 66.666%;}
     .col-md-9 {width: 75%;}
     .col-md-10 {width: 83.333%;}
     .col-md-11 {width: 91.666%;}
@@ -89,8 +89,8 @@ a, button {
     .col-lg-4 {width: 33.333%;}
     .col-lg-5 {width: 41.666%;}
     .col-lg-6 {width: 50%;}
-    .col-lg-7 {width: 58.333;}
-    .col-lg-8 {width: 66.666;}
+    .col-lg-7 {width: 58.333%;}
+    .col-lg-8 {width: 66.666%;}
     .col-lg-9 {width: 75%;}
     .col-lg-10 {width: 83.333%;}
     .col-lg-11 {width: 91.666%;}
@@ -307,12 +307,23 @@ a, button {
     align-items: center;
 
     min-height: 100vh;
-    padding: 5rem 0 0;
 
     overflow-x: hidden;
     position: relative;
 }
-.about-container > div {
+.about-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    padding: 3rem 2rem;
+    margin: 5rem 1rem;
+
+    background: #fafaff;
+
+    box-shadow: .2rem 1rem 1rem #00000018;
+}
+.about-card > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -329,6 +340,7 @@ a, button {
     margin-top: 1rem;
     
     font-size: 3rem;
+    text-align: center;
 }
 .about-subtitle {
     margin-bottom: 1rem;
@@ -357,16 +369,12 @@ a, button {
     text-align: center;
     letter-spacing: .1rem;
 }
-/* [media] about sm */
-@media screen and (min-width: 576px){
-}
 /* [media] about md */
 @media screen and (min-width: 768px){
-    .about-container {
-        flex-direction: row;
-        align-items: flex-start;
+    .about-card {
         justify-content: space-around;
-        padding: 6rem 0 0;
+        
+        padding: 5rem 0;
     }
     .about-description {
         line-height: 2rem;
@@ -375,10 +383,7 @@ a, button {
 /* [media] about lg */
 @media screen and (min-width: 992px) {
     .about-container {
-        align-items: center;
-    }
-    .about-container > div {
-        padding-bottom: 5rem;
+        justify-content: center;
     }
     .about-name {
         font-size: 3.5rem;
@@ -401,7 +406,7 @@ a, button {
     align-items: center;
 
     min-height: 100vh;
-    padding: 5rem 0 0;
+    padding: 5rem 0;
 
     overflow-x: hidden;
     position: relative;
@@ -423,11 +428,11 @@ a, button {
     flex-direction: column;
     align-items: center;
     
-    margin: 2rem 1rem;
+    margin: 3rem 1rem;
 
     background:#fafaff;
 
-    box-shadow: .5rem 1rem 2rem #00000020;
+    box-shadow: .2rem 1rem 1rem #00000018;
 }
 .service-card-bg {
     min-width: 100%;
@@ -448,6 +453,7 @@ a, button {
 /* [media] services lg */
 @media screen and (min-width: 992px){
     .services-container {
+        padding-top: 0;
         justify-content: center;
     }
 }
