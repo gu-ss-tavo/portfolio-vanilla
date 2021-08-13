@@ -13,7 +13,7 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    background-color: #e8e8e8;
+    background-color: #f2f2f2;
 }
 header {
     z-index: 9999;
@@ -51,6 +51,21 @@ a, button {
 .col-10 {width: 83.333%;}
 .col-11 {width: 91.666%;}
 .col-12 {width: 100%;}
+/* [media] grid sm */
+@media screen and (min-width: 576px) {
+    .col-sm-1 {width: 8.333%;}
+    .col-sm-2 {width: 16.666%;}
+    .col-sm-3 {width: 25%;}
+    .col-sm-4 {width: 33.333%;}
+    .col-sm-5 {width: 41.666%;}
+    .col-sm-6 {width: 50%;}
+    .col-sm-7 {width: 58.333;}
+    .col-sm-8 {width: 66.666;}
+    .col-sm-9 {width: 75%;}
+    .col-sm-10 {width: 83.333%;}
+    .col-sm-11 {width: 91.666%;}
+    .col-sm-12 {width: 100%;}
+}
 /* [media] grid md */
 @media screen and (min-width: 768px) {
     .col-md-1 {width: 8.333%;}
@@ -66,22 +81,20 @@ a, button {
     .col-md-11 {width: 91.666%;}
     .col-md-12 {width: 100%;}
 }
-
-/* *helpers */
-.flex-align-bottom {
-    align-self: flex-end;
-}
-.ic {
-    width: 2rem;
-    height: 2rem;
-
-    margin: 0 1rem;
-}
-.card {
-    padding: 1rem;
-
-    color: #fafaff;
-    box-shadow: .3rem .3rem .8rem #00000055;
+/* [media] grid lg */
+@media screen and (min-width: 992px) {
+    .col-lg-1 {width: 8.333%;}
+    .col-lg-2 {width: 16.666%;}
+    .col-lg-3 {width: 25%;}
+    .col-lg-4 {width: 33.333%;}
+    .col-lg-5 {width: 41.666%;}
+    .col-lg-6 {width: 50%;}
+    .col-lg-7 {width: 58.333;}
+    .col-lg-8 {width: 66.666;}
+    .col-lg-9 {width: 75%;}
+    .col-lg-10 {width: 83.333%;}
+    .col-lg-11 {width: 91.666%;}
+    .col-lg-12 {width: 100%;}
 }
 /* *styles */
 /* navmenu */
@@ -104,11 +117,15 @@ a, button {
 .navmenu-list {
     padding: 1rem;
 }
+.navmenu-ic {
+    width: 2rem;
+    height: 2rem;
 
+    margin: 0 1rem;
+}
 .navmenu-item-list {
     padding: .5rem;
 }
-
 .navmenu-item-list > a {
     display: flex;
     align-items: center;
@@ -117,13 +134,12 @@ a, button {
     width: 100%;
     
     color: #fafaff;
-    
 }
 .navmenu-item-list.active a {
     color: #7aaa2b;
     font-size: 2.2rem;
 }
-.navmenu-item-list.active a img{
+.navmenu-item-list.active .navmenu-ic{
     filter: invert(27%) sepia(51%) saturate(2000%) hue-rotate(35deg) brightness(100%);
 }   
 .btn-navmenu {
@@ -180,7 +196,7 @@ a, button {
 }
 /* [media] nav sm */
 @media screen and (min-width: 576px) {
-    .ic {
+    .navmenu-ic {
         display: none;
     }
     .navmenu-container {
@@ -217,6 +233,13 @@ a, button {
     .btn-navmenu {
         display: none;
     }
+}
+
+/* section container*/
+.section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* home container */
@@ -284,7 +307,7 @@ a, button {
     align-items: center;
 
     min-height: 100vh;
-    padding: 5rem 0 5rem;
+    padding: 5rem 0 0;
 
     overflow-x: hidden;
     position: relative;
@@ -328,7 +351,7 @@ a, button {
     margin: 0 .5rem;
 }
 .about-description {
-    padding: 2rem 3rem;
+    padding: 2rem 0;
 
     font-size: 1.5rem;
     text-align: center;
@@ -342,7 +365,7 @@ a, button {
     .about-container {
         flex-direction: row;
         align-items: flex-start;
-        justify-content: center;
+        justify-content: space-around;
         padding: 6rem 0 0;
     }
     .about-description {
@@ -368,5 +391,63 @@ a, button {
         line-height: 3rem;
         letter-spacing: 0;
         word-spacing: .2rem;
+    }
+}
+
+/* services container*/
+.services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-height: 100vh;
+    padding: 5rem 0 0;
+
+    overflow-x: hidden;
+    position: relative;
+}
+.services-container > h2 {
+    margin-bottom: 2rem;
+
+    color: #afafaf;
+    font-size: 5rem;
+}
+.service-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    margin: 2rem 1rem;
+
+    background:#fafaff;
+
+    box-shadow: .5rem 1rem 2rem #00000020;
+}
+.service-card-bg {
+    min-width: 100%;
+    min-height: 15rem;
+    background: #e5e5e5;
+}
+.service-card-info {
+    padding: 1rem;
+}
+.service-card-info h2 {
+    padding: 1rem 0;
+
+    font-size: 1.8rem;
+}
+.service-card-info p {
+    font-size: 1.4rem;
+}
+/* [media] services lg */
+@media screen and (min-width: 992px){
+    .services-container {
+        justify-content: center;
     }
 }
