@@ -317,7 +317,7 @@ a, button {
     align-items: flex-start;
 
     padding: 3rem 2rem;
-    margin: 5rem 1rem;
+    margin: 6rem 1rem 5rem;
 
     background: #fafaff;
 
@@ -406,7 +406,7 @@ a, button {
     align-items: center;
 
     min-height: 100vh;
-    padding: 5rem 0;
+    padding: 1rem 0 5rem;
 
     overflow-x: hidden;
     position: relative;
@@ -449,6 +449,12 @@ a, button {
 }
 .service-card-info p {
     font-size: 1.4rem;
+}
+/* [media] services sm */
+@media screen and (min-width: 576px) {
+    .services-container {
+        padding: 5rem 0;
+    }
 }
 /* [media] services lg */
 @media screen and (min-width: 992px){
