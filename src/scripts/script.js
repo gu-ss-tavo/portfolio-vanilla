@@ -1,6 +1,7 @@
 let header_main = document.querySelector('.header-main');
 
 let navmenu = document.querySelector('.navmenu-container');
+let navmenu_list = document.querySelector('.navmenu-list');
 let btn_navmenu = document.querySelector('.btn-navmenu');
 
 // * events
@@ -9,13 +10,18 @@ window.onresize = () => {
         close_menu();
     }
 };
+window.onscroll= () => {
+    if(window.scrollY > 0) navmenu_list.classList.add("active");
+    else navmenu_list.classList.remove("active");
+};
 
 // * nav menu
-btn_navmenu.onclick =  e => {
+btn_navmenu.onclick = e => {
     e.stopPropagation();
     toggleMenu(e);
 };
-header_main.onclick = e => {
+navmenu.onclick = e => {
+    e.stopPropagation();
     close_menu(e);
 };
 

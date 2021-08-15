@@ -16,11 +16,8 @@ body {
     background-color: #f2f2f2;
 }
 header {
-    z-index: 9999;
     min-width: 100%;
     min-height: 100vh;
-
-    position: fixed;
 }
 
 ul {
@@ -98,24 +95,37 @@ a, button {
 }
 /* *styles */
 /* navmenu */
+.header-main {  
+    min-height: 0;
+
+    z-index: 9999;
+    position: fixed;
+}
 .navmenu-container {
-    min-width: 25rem;
-    min-height: 100%;
-    
-    background: #272727;
+    min-height: 100vh;
 
     position: absolute;
+
     right: -25rem;
 
     font-size: 2rem;
 
-    transition: right .3s ease-in-out;
+    transition: right .2s ease-in-out;
 }
 .navmenu-container.active {
+    left: 0;
     right: 0;
 }
 .navmenu-list {
+    min-width:100%;
+    min-height: 100%;
     padding: 1rem;
+
+    background: #272727;
+    min-width: 25rem;
+
+    position: absolute;
+    right: 0;
 }
 .navmenu-ic {
     width: 2rem;
@@ -157,7 +167,7 @@ a, button {
     border-radius: .25rem;
 
     cursor: pointer;
-    transition: .3s;
+    transition: .2s;
 }
 .btn-navmenu::before {
     content: '';
@@ -170,7 +180,7 @@ a, button {
     transform: translateY(-1rem);
     
     box-shadow: 0 1rem 0 #181818;
-    transition: .3s;
+    transition: .2s;
 }
 .btn-navmenu::after {
     content: '';
@@ -181,7 +191,7 @@ a, button {
 
     position: absolute;
     transform: translateY(1rem);
-    transition: .3s;
+    transition: .2s;
 }
 .btn-navmenu.active {
     background: #d85151;
@@ -200,14 +210,9 @@ a, button {
         display: none;
     }
     .navmenu-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
         min-width: 100%;
         min-height: 5rem;
 
-        background: transparent;
         
         font-size: 1.4rem;
         font-weight: 700;
@@ -217,7 +222,18 @@ a, button {
     }
     .navmenu-list {
         display: flex;
+        justify-content: center;
+        align-items:center;
         padding: 0; 
+
+        background: transparent;
+        left: 0;
+
+        transition: background .2s, box-shadow .2s;
+    }
+    .navmenu-list.active {
+        background: #fafaff;
+        box-shadow: .2rem .2rem .3rem #00000018;
     }
     .navmenu-item-list {
         padding: .5rem 1rem;
