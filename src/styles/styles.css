@@ -566,8 +566,8 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
 /* contact container */
 .contact-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
     
     padding: 1rem 0 2rem;
 
@@ -581,12 +581,16 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     font-size: 5rem;
 }
 .contact-info {
+    display: flex;
+    flex-direction: column;
+
+
     padding: 1rem;
 
     font-size: 1.6rem;
 }
 .contact-info > h2 {
-    padding-top: 1rem;
+    padding-top: 3rem;
 
     color: #618d1b;
     font-size: 1.6rem;
@@ -596,6 +600,21 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     flex-direction: column;
     
     padding:1rem;
+}
+.contact-form-container > input[type="submit"] {    
+    align-self: flex-end;
+    padding: 1rem;
+
+    background: transparent;
+    border: 1px solid #272727;
+
+    font-size:1.5rem;
+}
+.contact-form-container > input[type="submit"]:hover {
+    background: #7aaa2b;
+    border-color: transparent;
+
+    color: #fafaff;
 }
 /* [media] portfolio sm*/
 @media screen and (min-width: 576px) {
