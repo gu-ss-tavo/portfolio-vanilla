@@ -337,8 +337,8 @@ a, button {
     flex-wrap: wrap;
     align-items: flex-start;
 
-    padding: 3rem 2rem;
-    margin: 2rem 0;
+    padding: 2rem;
+    margin: 1rem 0;
 
     background: #fafaff;
 
@@ -376,15 +376,17 @@ a, button {
     padding: .2rem 1rem;
     
     background: #18181840;
-    border-radius: 1.5rem;
+    border-radius: 2.2rem;
 }
 .about-ic {
-    width: 2.6rem;
-    height: 2.6rem;
+    width: 2.8rem;
+    height: 2.8rem;
+
+    padding: .5rem;
     margin: 0 .5rem;
 }
 .about-description {
-    padding: 2rem 0;
+    padding: 2rem 0 0;
 
     font-size: 1.5rem;
     text-align: center;
@@ -395,8 +397,6 @@ a, button {
     .about-card {
         justify-content: space-around;
         align-items: center;
-        
-        padding-top: 6rem;
     }
     .about-description {
         line-height: 2rem;
@@ -428,7 +428,6 @@ a, button {
     align-items: center;
 
     min-height: 100vh;
-    padding: 1rem 0 2rem;
 
     overflow-x: hidden;
     position: relative;
@@ -461,8 +460,8 @@ a, button {
     min-height: 15rem;
 }
 .service-card-icon {
-    width: 50%;
-    height: 50%;
+    width: 40%;
+    height: 40%;
 }
 .service-card-info {
     padding: 1rem;
@@ -552,7 +551,6 @@ a, button {
 /* [media] services lg */
 @media screen and (min-width: 992px){
     .portfolio-container {
-        padding-top: 0;
         justify-content: center;
     }
 }
