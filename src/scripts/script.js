@@ -33,4 +33,3 @@ const close_menu = e => {
     navmenu.classList.remove('active');
     btn_navmenu.classList.remove('active');
 };
-

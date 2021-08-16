@@ -407,10 +407,15 @@ a, button {
     .about-container {
         justify-content: center;
     }
+    .about-card {
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+    }
     .about-name {
         font-size: 3.5rem;
     }
     .about-subtitle {
+        color: #618d1b;
         font-size: 2.7rem;
     }
     .about-description {
@@ -528,7 +533,7 @@ a, button {
 }
 .portfolio-card-bg {
     min-width: 100%;
-    min-height: 20rem;
+    min-height: 14rem;
     background: #e5e5e5;
 }
 .portfolio-card-info {
@@ -540,7 +545,7 @@ a, button {
     font-size: 1.8rem;
 }
 .portfolio-card-info p {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 /* [media] portfolio sm*/
 @media screen and (min-width: 576px) {
