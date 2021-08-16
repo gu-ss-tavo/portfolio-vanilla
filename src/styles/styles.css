@@ -34,9 +34,21 @@ button {
 a, button {
     -webkit-tap-highlight-color: transparent;
 }
+input[type="text"], input[type="email"], textarea {
+    border: none;
+
+    padding: 1rem;
+    margin: 1rem 0;
+
+    font-size: 1.8rem;
+    line-height: 1.5;
+}
+input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::placeholder {
+    font-size: 1.6rem;
+}
 
 /* *helpers */
-.last-element-in-article {
+.article-space{
     margin-bottom: 5rem;
 }
 
@@ -432,8 +444,6 @@ a, button {
     flex-direction: column;
     align-items: center;
 
-    min-height: 100vh;
-
     overflow-x: hidden;
     position: relative;
 }
@@ -486,13 +496,6 @@ a, button {
 @media screen and (min-width: 576px) {
     .services-container {
         padding-top: 6rem;
-    }
-}
-/* [media] services lg */
-@media screen and (min-width: 992px){
-    .services-container {
-        padding-top: 0;
-        justify-content: center;
     }
 }
 
@@ -557,5 +560,53 @@ a, button {
 @media screen and (min-width: 992px){
     .portfolio-container {
         justify-content: center;
+    }
+}
+
+/* contact container */
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    padding: 1rem 0 2rem;
+
+    overflow-x: hidden;
+    position: relative;
+}
+.contact-container > h2 {
+    margin-bottom: 2rem;
+
+    color: #afafaf;
+    font-size: 5rem;
+}
+.contact-info {
+    padding: 1rem;
+
+    font-size: 1.6rem;
+}
+.contact-info > h2 {
+    padding-top: 1rem;
+
+    color: #618d1b;
+    font-size: 1.6rem;
+}
+.contact-form-container {
+    display: flex;
+    flex-direction: column;
+    
+    padding:1rem;
+}
+/* [media] portfolio sm*/
+@media screen and (min-width: 576px) {
+    .contact-container {
+        padding-top: 6rem;
+    }
+}
+/* [media] services lg */
+@media screen and (min-width: 992px){
+    .contact-container {
+        flex-wrap: wrap;
+        flex-direction: row;
     }
 }
