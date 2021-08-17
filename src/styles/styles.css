@@ -9,6 +9,7 @@
     --c-green-secondary: #7aaa2b;
 
     --c-shadow-main: #00000015;
+    --c-shadow-dark: #0000009a;
     --c-light-main: #ffffff30;
     --c-light-secondary: #ffffff20;
 }
@@ -398,6 +399,24 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     font-size: 2.2rem;
     font-weight: 400;
 }
+.about-btn-container {
+    display: flex;
+}
+.about-btn {
+    padding: .7rem 1.5rem;
+    margin: 0 .5rem;
+
+    border: 1px solid var(--c-shadow-dark);
+
+    font-size: 1.6rem;
+    text-align: right;
+}
+.about-btn:hover {
+    background: var(--c-green-secondary);
+    border-color: transparent;
+
+    color: var(--c-white-main);
+}
 .about-description {
     padding: 2rem 0 0;
 
@@ -405,6 +424,7 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     text-align: center;
     letter-spacing: .1rem;
 }
+
 /* [media] about md */
 @media screen and (min-width: 768px){
     .about-card {
@@ -540,7 +560,7 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
 }
 .portfolio-card-bg {
     min-width: 100%;
-    min-height: 14rem;
+    min-height: 16rem;
     background: #e5e5e5;
 }
 .portfolio-card-info {
@@ -558,6 +578,9 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
 @media screen and (min-width: 576px) {
     .portfolio-container {
         padding-top: 6rem;
+    }
+    .portfolio-card-bg {
+        min-height: 20rem;
     }
 }
 /* [media] services lg */
