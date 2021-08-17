@@ -682,7 +682,7 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     margin: 0 .3rem;
     
     color: var(--c-light-main);
-    transition: top .2s;
+    transition: color .2s, top .2s;
 }
 .footer-title-container > h2:nth-child(1) {
     top: .2rem;
@@ -709,23 +709,27 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     top: .2rem
 }
 .footer-title-container > h2:hover {
+    color: var(--c-white-main);
     top: 0;
 }
 .footer-social-container {
     display: flex;
     align-items: center;
 
-    padding: .2rem 1rem;
+    padding: .4rem 1rem .2rem;
     
     background: var(--c-light-secondary);
-    border-radius: 2.2rem;
 
 }
 .footer-ic {
-    width: 3.6rem;
-    height: 3.6rem;
+    width: 3.2rem;
+    height: 3.2rem;
 
     padding: .7rem;
+}
+.footer-ic:hover {
+    outline: 1px solid #000;
+    background: var(--c-light-main);
 }
 .footer-copy {
     margin-top: 2rem;
