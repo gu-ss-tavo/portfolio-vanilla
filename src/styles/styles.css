@@ -50,6 +50,10 @@ button {
 a, button {
     -webkit-tap-highlight-color: transparent;
 }
+textarea {
+    resize: none;
+}
+
 input[type="text"], input[type="email"], textarea {
     border: none;
 
@@ -403,7 +407,7 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     display: flex;
 }
 .about-btn {
-    padding: .7rem 1.5rem;
+    padding: .7rem 1rem;
     margin: 0 .5rem;
 
     border: 1px solid var(--c-shadow-dark);
@@ -467,6 +471,7 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 1rem 0 2rem;
 
     overflow-x: hidden;
     position: relative;
@@ -488,7 +493,7 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     flex-direction: column;
     align-items: center;
     
-    margin: 0 1rem 3rem;
+    margin: 1rem 1rem 2rem;
 }
 .service-card-bg {
     display: flex;
@@ -496,11 +501,10 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     align-items: flex-end;
 
     min-width: 100%;
-    min-height: 15rem;
+    min-height: 10rem;
 }
 .service-card-icon {
-    width: 40%;
-    height: 40%;
+    width: 35%;
 }
 .service-card-info {
     padding: 1rem;
@@ -520,6 +524,9 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
 @media screen and (min-width: 576px) {
     .services-container {
         padding-top: 6rem;
+    }
+    .service-card-icon {
+        width: 40%;
     }
 }
 
@@ -559,9 +566,8 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     box-shadow: .2rem 1rem 1rem var(--c-shadow-main);
 }
 .portfolio-card-bg {
-    min-width: 100%;
-    min-height: 16rem;
-    background: #e5e5e5;
+    width: 100%;
+    height: auto;
 }
 .portfolio-card-info {
     padding: 1rem 1rem 2rem;
