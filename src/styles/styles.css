@@ -9,9 +9,13 @@
     --c-green-secondary: #7aaa2b;
 
     --c-shadow-main: #00000015;
+    --c-shadow-secondary: #00000050;
     --c-shadow-dark: #0000009a;
     --c-light-main: #ffffff30;
     --c-light-secondary: #ffffff20;
+    
+    --c-dark-panel: #000000dd;
+    --c-light-panel: #ffffffdd  ;
 }
 
 /* *reset */
@@ -54,7 +58,7 @@ textarea {
     resize: none;
 }
 
-input[type="text"], input[type="email"], textarea {
+input[type='text'], input[type='email'], textarea {
     border: none;
 
     padding: 1rem;
@@ -65,8 +69,8 @@ input[type="text"], input[type="email"], textarea {
 
     box-shadow: .2rem .2rem .3rem var(--c-shadow-main);
 }
-input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::placeholder {
-    font-size: 1.6rem;
+input[type='text']::placeholder, input[type='email']::placeholder, textarea::placeholder {
+    color: var(--c-shadow-secondary);
 }
 
 /* *helpers */
@@ -410,7 +414,7 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     padding: .7rem 1rem;
     margin: 0 .5rem;
 
-    border: 1px solid var(--c-shadow-dark);
+    border: 1px solid var(--c-dark-main);
 
     font-size: 1.6rem;
     text-align: right;
@@ -424,7 +428,7 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
 .about-description {
     padding: 2rem 0 0;
 
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-align: center;
     letter-spacing: .1rem;
 }
@@ -448,8 +452,8 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
         justify-content: center;
     }
     .about-card {
-        padding-top: 10rem;
-        padding-bottom: 10rem;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
     }
     .about-name {
         font-size: 3.5rem;
@@ -515,10 +519,10 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     padding: 1rem 0;
 
     color: var(--c-green-main);
-    font-size: 1.8rem;
+    font-size: 2.4rem;
 }
 .service-card-info p {
-    font-size: 1.4rem;
+    font-size: 1.7rem;
 }
 /* [media] services sm */
 @media screen and (min-width: 576px) {
@@ -553,6 +557,7 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
+    overflow: hidden;
 }
 .portfolio-card {
     display: flex;
@@ -563,7 +568,11 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
 
     background:var(--c-white-main);
 
+    position: relative;
     box-shadow: .2rem 1rem 1rem var(--c-shadow-main);
+    overflow: hidden;
+
+    transition: filter .3s;
 }
 .portfolio-card-bg {
     width: 100%;
@@ -575,10 +584,80 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
 .portfolio-card-info h2 {
     padding: 1rem 0;
 
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 .portfolio-card-info p {
+    font-size: 1.7rem;
+}
+.portfolio-card-hover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+
+    background: var(--c-dark-panel);
+    
+    position: absolute;
+    top: 4rem;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0rem;
+
+    transition: opacity .2s, top .2s, bottom .2s;
+}
+.portfolio-card-hover * {
+    color: var(--c-white-main);
+}
+.portfolio-card-hover h2 {
+    position: relative;
+    top: -1rem;
+
+    color: var(--c-green-main);
+    font-size: 2rem;
+    
+    transition: top .2s;
+}
+.portfolio-card-hover p {
+    margin-top: 1rem;
+
     font-size: 1.6rem;
+    letter-spacing: .1rem;
+}
+
+.portfolio-card:hover {
+    border: 2px solid var(--c-dark-main);
+}
+.portfolio-card:hover .portfolio-card-bg, .portfolio-card:hover .portfolio-card-info {
+    filter: blur(.3rem);
+}
+.portfolio-card:hover .portfolio-card-hover {
+    opacity: 1;
+    top: 1rem;
+    bottom: 1rem;
+}
+.portfolio-card:hover .portfolio-card-hover h2 {
+    top: 0;
+}
+.portfolio-card-hover-btn {
+    padding: 1rem 1rem;
+    margin-top: 2rem;
+
+    position: relative;
+    top: 1rem;
+
+    border: 1px solid var(--c-white-main);
+
+    font-size: 1.6rem;
+
+    transition: top .2s;
+}
+.portfolio-card-hover-btn:hover {
+    background: var(--c-green-main);
+    border-color: transparent;
+}
+.portfolio-card:hover .portfolio-card-hover-btn {
+    top: 0;
 }
 /* [media] portfolio sm*/
 @media screen and (min-width: 576px) {
@@ -587,6 +666,17 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     }
     .portfolio-card-bg {
         min-height: 20rem;
+    }
+    .portfolio-card-hover {
+        top: 4rem;
+        left: 2rem;
+        right: 2rem;
+        bottom: 0rem;
+    }
+    .portfolio-card:hover .portfolio-card-hover {
+        opacity: 1;
+        top: 2rem;
+        bottom: 2rem;
     }
 }
 /* [media] services lg */
@@ -620,13 +710,13 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
 
     padding: 1rem;
 
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 }
 .contact-info > h2 {
     padding-top: 3rem;
 
     color: var(--c-green-main);
-    font-size: 1.6rem;
+    font-size: 2rem;
 }
 .contact-form-container {
     display: flex;
@@ -634,7 +724,7 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     
     padding:1rem;
 }
-.contact-form-container > input[type="submit"] {    
+.contact-form-container > input[type='submit'] {    
     align-self: flex-end;
     padding: 1rem;
     margin-top: 1rem;
@@ -644,7 +734,7 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
 
     font-size:1.5rem;
 }
-.contact-form-container > input[type="submit"]:hover {
+.contact-form-container > input[type='submit']:hover {
     background: var(--c-green-secondary);
     border-color: transparent;
 
