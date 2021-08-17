@@ -1,3 +1,18 @@
+/* *vars */
+:root {
+    --c-dark-main: #272727;
+    --c-dark-secondary: #181818;
+
+    --c-white-main: #fafaff;
+    
+    --c-green-main: #618d1b;
+    --c-green-secondary: #7aaa2b;
+
+    --c-shadow-main: #00000015;
+    --c-light-main: #ffffff30;
+    --c-light-secondary: #ffffff20;
+}
+
 /* *reset */
 * {
     margin: 0;
@@ -6,7 +21,7 @@
     box-sizing: border-box;
     
     font-family: 'Open Sans', sans-serif;
-    color: #181818;
+    color: var(--c-dark-secondary);
 }
 html {
     font-size: 0.625rem;
@@ -42,6 +57,8 @@ input[type="text"], input[type="email"], textarea {
 
     font-size: 1.8rem;
     line-height: 1.5;
+
+    box-shadow: .2rem .2rem .3rem var(--c-shadow-main);
 }
 input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::placeholder {
     font-size: 1.6rem;
@@ -138,7 +155,7 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     min-height: 100%;
     padding: 1rem;
 
-    background: #272727;
+    background: var(--c-dark-main);
     min-width: 25rem;
 
     position: absolute;
@@ -160,10 +177,10 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     padding: 1rem;
     width: 100%;
     
-    color: #fafaff;
+    color: var(--c-white-main);
 }
 .navmenu-item-list.active a {
-    color: #7aaa2b;
+    color: var(--c-green-secondary);
     font-size: 2.2rem;
 }
 .navmenu-item-list.active .navmenu-ic{
@@ -191,12 +208,12 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     width: 2.8rem;
     height: .3rem;
     
-    background: #181818;
+    background: var(--c-dark-secondary);
 
     position: absolute;
     transform: translateY(-1rem);
     
-    box-shadow: 0 1rem 0 #181818;
+    box-shadow: 0 1rem 0 var(--c-dark-secondary);
     transition: .2s;
 }
 .btn-navmenu::after {
@@ -204,7 +221,7 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     width: 2.8rem;
     height: .3rem;
     
-    background: #181818;
+    background: var(--c-dark-secondary);
 
     position: absolute;
     transform: translateY(1rem);
@@ -215,7 +232,7 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
 }
 .btn-navmenu.active::before {
     transform: translateY(0) rotate(45deg);
-    box-shadow: 0 0 0 #18181800;
+    box-shadow: 0 0 0 var(--c-shadow-main);
 }
 .btn-navmenu.active::after {
     transform: translateY(0) rotate(-45deg);
@@ -248,19 +265,19 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
         transition: background .2s, box-shadow .2s;
     }
     .navmenu-list.active {
-        background: #fafaff;
-        box-shadow: .2rem .2rem .3rem #00000018;
+        background: var(--c-white-main);
+        box-shadow: .2rem .2rem .3rem var(--c-shadow-main);
     }
     .navmenu-item-list {
         padding: .5rem 1rem;
     }
     .navmenu-item-list.active a {
-        color: #618d1b;
+        color: var(--c-green-main);
         font-size: 1.5rem;
     }
     .navmenu-item-list > a {
         padding: .5rem;
-        color: #181818;
+        color: var(--c-dark-secondary);
     }
     .btn-navmenu {
         display: none;
@@ -304,13 +321,13 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     position: relative;
 }
 .brand-block h2:nth-child(2) {
-    color: #618d1b;
+    color: var(--c-green-main);
     clip-path: polygon(0% 48%, 15% 38%, 34% 35%, 49% 39%, 59% 45%, 74% 49%, 87% 50%, 100% 46%, 100% 100%, 0% 100%);
 
     animation: 2.2s ease-in-out infinite alternate brand-anim-h2-c1;
 }
 .brand-block h2:nth-child(3) {
-    color: #7aaa2b;
+    color: var(--c-green-secondary);
     clip-path: polygon(0 58%, 11% 64%, 28% 67%, 44% 65%, 59% 55%, 73% 50%, 89% 52%, 100% 58%, 100% 100%, 0% 100%);
     
     animation: 2.2s ease-in-out infinite alternate brand-anim-h2-c2;
@@ -338,8 +355,7 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     flex-direction: column;
     align-items: center;
 
-    padding: 6rem 0 2rem;
-    min-height: 100vh;
+    padding: 6rem 1rem 2rem;
 
     overflow-x: hidden;
     position: relative;
@@ -352,9 +368,9 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     padding: 2rem;
     margin: 1rem 0;
 
-    background: #fafaff;
+    background: var(--c-white-main);
 
-    box-shadow: .2rem 1rem 1rem #00000018;
+    box-shadow: .2rem 1rem 1rem var(--c-shadow-main);
 }
 .about-card > div {
     display: flex;
@@ -372,30 +388,15 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
 .about-name {
     margin-top: 1rem;
     
-    font-size: 3rem;
+    font-size: 2.6rem;
     text-align: center;
 }
 .about-subtitle {
     margin-bottom: 1rem;
     
+    color: var(--c-green-main);
     font-size: 2.2rem;
     font-weight: 400;
-}
-.about-social-container {
-    display: flex;
-    align-items: center;
-
-    padding: .2rem 1rem;
-    
-    background: #18181840;
-    border-radius: 2.2rem;
-}
-.about-ic {
-    width: 2.8rem;
-    height: 2.8rem;
-
-    padding: .5rem;
-    margin: 0 .5rem;
 }
 .about-description {
     padding: 2rem 0 0;
@@ -409,6 +410,9 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     .about-card {
         justify-content: space-around;
         align-items: center;
+    }
+    .about-name {
+        font-size: 2.8rem;
     }
     .about-description {
         line-height: 2rem;
@@ -427,7 +431,7 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
         font-size: 3.5rem;
     }
     .about-subtitle {
-        color: #618d1b;
+        color: var(--c-green-main);
         font-size: 2.7rem;
     }
     .about-description {
@@ -464,7 +468,7 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     flex-direction: column;
     align-items: center;
     
-    margin: 3rem 1rem;
+    margin: 0 1rem 3rem;
 }
 .service-card-bg {
     display: flex;
@@ -486,7 +490,7 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
 .service-card-info h2 {
     padding: 1rem 0;
 
-    color: #618d1b;
+    color: var(--c-green-main);
     font-size: 1.8rem;
 }
 .service-card-info p {
@@ -530,9 +534,9 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     
     margin: 3rem 1rem;
 
-    background:#fafaff;
+    background:var(--c-white-main);
 
-    box-shadow: .2rem 1rem 1rem #00000018;
+    box-shadow: .2rem 1rem 1rem var(--c-shadow-main);
 }
 .portfolio-card-bg {
     min-width: 100%;
@@ -592,7 +596,7 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
 .contact-info > h2 {
     padding-top: 3rem;
 
-    color: #618d1b;
+    color: var(--c-green-main);
     font-size: 1.6rem;
 }
 .contact-form-container {
@@ -604,17 +608,18 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
 .contact-form-container > input[type="submit"] {    
     align-self: flex-end;
     padding: 1rem;
+    margin-top: 1rem;
 
     background: transparent;
-    border: 1px solid #272727;
+    border: 1px solid var(--c-dark-main);
 
     font-size:1.5rem;
 }
 .contact-form-container > input[type="submit"]:hover {
-    background: #7aaa2b;
+    background: var(--c-green-secondary);
     border-color: transparent;
 
-    color: #fafaff;
+    color: var(--c-white-main);
 }
 /* [media] portfolio sm*/
 @media screen and (min-width: 576px) {
@@ -628,4 +633,83 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
         flex-wrap: wrap;
         flex-direction: row;
     }
+}
+
+/* footer container */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    padding: 5rem 0;
+    background: var(--c-dark-main);
+
+    overflow-x: hidden;
+    position: relative;
+}
+.footer-title-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 2rem;
+    
+    font-size: 2.5rem;
+}
+.footer-title-container > h2 {
+    position: relative;
+    margin: 0 .3rem;
+    
+    color: var(--c-light-main);
+    transition: top .2s;
+}
+.footer-title-container > h2:nth-child(1) {
+    top: .2rem;
+}
+.footer-title-container > h2:nth-child(2) {
+    top: -.3rem;
+}
+.footer-title-container > h2:nth-child(3) {
+    top: .5rem;
+}
+.footer-title-container > h2:nth-child(4) {
+    top: -.4rem;
+}
+.footer-title-container > h2:nth-child(5) {
+    top: 0;
+}
+.footer-title-container > h2:nth-child(6) {
+    top: .4rem
+}
+.footer-title-container > h2:nth-child(7) {
+    top: -.2rem
+}
+.footer-title-container > h2:nth-child(8) {
+    top: .2rem
+}
+.footer-title-container > h2:hover {
+    top: 0;
+}
+.footer-social-container {
+    display: flex;
+    align-items: center;
+
+    padding: .2rem 1rem;
+    
+    background: var(--c-light-secondary);
+    border-radius: 2.2rem;
+
+}
+.footer-ic {
+    width: 3.6rem;
+    height: 3.6rem;
+
+    padding: .7rem;
+}
+.footer-copy {
+    margin-top: 2rem;
+
+    font-size: 1.3rem;
+    text-align: center;
+}
+.footer-copy cite {
+    color: var(--c-white-main)
 }
