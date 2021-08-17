@@ -389,6 +389,9 @@ input[type='text']::placeholder, input[type='email']::placeholder, textarea::pla
 
     position: relative;
 }
+.about-card > div:nth-child(1) {
+    margin-bottom: 3rem;
+}
 .about-user-photo {
     width: 18rem;
     
@@ -426,7 +429,6 @@ input[type='text']::placeholder, input[type='email']::placeholder, textarea::pla
     color: var(--c-white-main);
 }
 .about-description {
-    padding: 2rem 0 0;
 
     font-size: 1.8rem;
     text-align: center;
@@ -444,6 +446,9 @@ input[type='text']::placeholder, input[type='email']::placeholder, textarea::pla
     }
     .about-description {
         line-height: 2rem;
+    }
+    .about-card > div:nth-child(1) {
+        margin-bottom: 0;
     }
 }
 /* [media] about lg */
@@ -626,7 +631,7 @@ input[type='text']::placeholder, input[type='email']::placeholder, textarea::pla
 }
 
 .portfolio-card:hover {
-    border: 2px solid var(--c-dark-main);
+    outline: 2px solid var(--c-dark-main);
 }
 .portfolio-card:hover .portfolio-card-bg, .portfolio-card:hover .portfolio-card-info {
     filter: blur(.3rem);
@@ -640,7 +645,7 @@ input[type='text']::placeholder, input[type='email']::placeholder, textarea::pla
     top: 0;
 }
 .portfolio-card-hover-btn {
-    padding: 1rem 1rem;
+    padding: .7rem 1rem;
     margin-top: 2rem;
 
     position: relative;
