@@ -4,6 +4,8 @@ let btn_navmenu = document.querySelector('.btn-navmenu');
 
 let articles = document.querySelector('.section-container').children;
 
+console.log(articles);
+
 // * events
 window.onresize = () => {
     if(innerWidth >= 576) {
@@ -11,21 +13,23 @@ window.onresize = () => {
     }
 };
 window.onscroll= () => {
-    if(window.scrollY > 0) navmenu_list.classList.add("active");
+    let scroll_y = window.scrollY;
+
+    if(scroll_y > 0) navmenu_list.classList.add("active");
     else navmenu_list.classList.remove("active");
 
-    if(window.scrollY < articles[1].offsetTop) {
-        console.log('hola');
-        activeItem(0);
-    }else if(window.scrollY < articles[2].offsetTop-10) {
-        activeItem(1);
-    }else if(window.scrollY < articles[3].offsetTop-10) {
-        activeItem(2);
-    }else if(window.scrollY < articles[4].offsetTop-10) {
-        activeItem(3);
-    }else {
-        activeItem(4);
-    }
+
+    if(scroll_y < articles[1].offsetTop-100) activeItem(0);
+    else if(scroll_y < articles[2].offsetTop-100) activeItem(1);
+    else if(scroll_y < articles[3].offsetTop-100) activeItem(2);
+    else if(scroll_y < articles[4].offsetTop-100) activeItem(3);
+    else activeItem(4);
+
+    let moves_home = scroll_y > articles[1].offsetTop - (window.innerHeight/1.4);
+    if(moves_home && scroll_y < articles[2].offsetTop - (window.innerHeight/1.4)) activeSection(articles[1]);
+    else if(moves_home && scroll_y < articles[3].offsetTop - (window.innerHeight/1.4)) activeSection(articles[2]);
+    else if(moves_home && scroll_y < articles[4].offsetTop - (window.innerHeight/1.4)) activeSection(articles[3]);
+    else if(moves_home && scroll_y > articles[4].offsetTop - (window.innerHeight/1.4)) activeSection(articles[4]);
 };
 
 // * nav menu
@@ -54,4 +58,7 @@ const activeItem = index => {
         }
         navmenu_list.children[i].classList.remove('active');
     }
+}
+const activeSection = section => {
+    section.classList.add('active');
 }

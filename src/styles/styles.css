@@ -59,7 +59,7 @@ textarea {
 }
 
 input[type='text'], input[type='email'], textarea {
-    border: none;
+    border: 1px solid var(--c-dark-main);
 
     padding: 1rem;
     margin: 1rem 0;
@@ -366,10 +366,16 @@ input[type='text']::placeholder, input[type='email']::placeholder, textarea::pla
     flex-direction: column;
     align-items: center;
 
-    padding: 6rem 1rem 2rem;
+    padding: 6rem 2rem 2rem;
 
     overflow-x: hidden;
     position: relative;
+
+    opacity: 0;
+    transition: opacity .2s;
+}
+.about-container.active {
+    opacity: 1;
 }
 .about-card {
     display: flex;
@@ -486,6 +492,12 @@ input[type='text']::placeholder, input[type='email']::placeholder, textarea::pla
 
     overflow-x: hidden;
     position: relative;
+    
+    opacity: 0;
+    transition: opacity .2s;
+}
+.services-container.active {
+    opacity: 1;
 }
 .services-container > h2 {
     margin-bottom: 2rem;
@@ -503,8 +515,10 @@ input[type='text']::placeholder, input[type='email']::placeholder, textarea::pla
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    margin: 1rem 1rem 2rem;
+
+    padding: 4rem 0;
+    margin: 2rem;
+    border: 1px solid var(--c-dark-main);
 }
 .service-card-bg {
     display: flex;
@@ -515,7 +529,7 @@ input[type='text']::placeholder, input[type='email']::placeholder, textarea::pla
     min-height: 10rem;
 }
 .service-card-icon {
-    width: 35%;
+    width: 40%;
 }
 .service-card-info {
     padding: 1rem;
@@ -537,7 +551,7 @@ input[type='text']::placeholder, input[type='email']::placeholder, textarea::pla
         padding-top: 6rem;
     }
     .service-card-icon {
-        width: 40%;
+        width: 50%;
     }
 }
 
@@ -552,6 +566,12 @@ input[type='text']::placeholder, input[type='email']::placeholder, textarea::pla
 
     overflow-x: hidden;
     position: relative;
+    
+    opacity: 0;
+    transition: opacity .2s;
+}
+.portfolio-container.active {
+    opacity: 1;
 }
 .portfolio-container > h2 {
     margin-bottom: 2rem;
@@ -703,6 +723,12 @@ input[type='text']::placeholder, input[type='email']::placeholder, textarea::pla
 
     overflow-x: hidden;
     position: relative;
+    
+    opacity: 0;
+    transition: opacity .2s;
+}
+.contact-container.active {
+    opacity: 1;
 }
 .contact-container > h2 {
     margin-bottom: 2rem;
