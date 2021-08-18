@@ -528,6 +528,9 @@ input[type='text']::placeholder, input[type='email']::placeholder, textarea::pla
     min-width: 100%;
     min-height: 10rem;
 }
+.service-card-bg img {
+    transition: transform .2s;
+}
 .service-card-icon {
     width: 40%;
 }
@@ -544,6 +547,9 @@ input[type='text']::placeholder, input[type='email']::placeholder, textarea::pla
 }
 .service-card-info p {
     font-size: 1.7rem;
+}
+.service-card:hover .service-card-bg img {
+    transform: scale(1.1);
 }
 /* [media] services sm */
 @media screen and (min-width: 576px) {
@@ -848,7 +854,6 @@ input[type='text']::placeholder, input[type='email']::placeholder, textarea::pla
     padding: .4rem 1rem .2rem;
     
     background: var(--c-light-secondary);
-
 }
 .footer-ic {
     width: 3.2rem;

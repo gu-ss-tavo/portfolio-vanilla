@@ -59,6 +59,7 @@ const activeItem = index => {
         navmenu_list.children[i].classList.remove('active');
     }
 }
+// * active section
 const activeSection = section => {
     section.classList.add('active');
 }
